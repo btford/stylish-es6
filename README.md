@@ -17,5 +17,23 @@ function (bar) {
 }
 ```
 
+## Reduce + anonymous function + comma operator
+
+[teach the controversy](https://twitter.com/briantford/status/479353642676662272)
+
+```javascript
+// again note the parens around the function body
+[1,2,3].reduce((obj, prop) => (obj[prop] = prop, obj), {})
+// -> { 1: 1, 2: 2, 3: 3 }
+
+// es5
+// way less cute imho
+[1, 2, 3].reduce(function (obj, prop) {
+  obj[prop] = prop;
+  return obj;
+}, {});
+```
+
+
 ## license
 MIT
